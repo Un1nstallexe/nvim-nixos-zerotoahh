@@ -1,1 +1,1 @@
-require("lua.base")
+require("base")

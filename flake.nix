@@ -15,22 +15,45 @@
           myLocalConfig = pkgs.vimUtils.buildVimPlugin {
               name = "my-local-config";
               src = ./.; # Grabs everything in the current git tree, including your `lua/` folder
+               doCheck = false;
             };
-            myPlugins = with pkgs.vimPlugins; [
+            lspAndStuff = with pkgs.vimPlugins; [
+              lz-n
+              nvim-treesitter.withAllGrammars
+              nvim-web-devicons
+            ];
+            myPlugins = lspAndStuff ++ [myLocalConfig];
+            myLazyPlugins = with pkgs.vimPlugins; [
+              conform-nvim
+              trouble-nvim
+              nvim-lspconfig
+              blink-cmp
+            ];
+            deps = with pkgs; [
+                  wl-clipboard
 
-            ] ++ [myLocalConfig];
+                  # LSPs
+                  nodePackages.vscode-langservers-extracted # Provides 'html' and 'cssls'
+                  nodePackages.typescript-language-server   # Provides 'ts_ls' (handles TS/JS/React)
+
+                  # Formatters
+                  prettier
+                ];
 
           customNeovim = pkgs.neovim.override {
             configure = {
               customRC = ''
                 luafile ${./init.lua}
               '';
-
+              extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath deps}"'';
               packages.myVimPackage = {
                 start = myPlugins;
-                opt = [];
+                opt = myLazyPlugins;
               };
+              extraPackages = deps;
+
             };
+
           };
         in
         {

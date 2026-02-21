@@ -25,3 +25,4 @@ opt.incsearch = true
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+require("plugin_loader")
