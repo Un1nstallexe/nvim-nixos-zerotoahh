@@ -68,6 +68,7 @@
             pyright
             rust-analyzer
             nixd
+            kotlin-language-server
             # Formatters
             prettier
             stylua
@@ -75,6 +76,7 @@
             rustfmt
             nixfmt
             csharpier
+            ktfmt
           ];
 
           customNeovim = pkgs.neovim.override {

@@ -20,6 +20,7 @@ return {
 				nix = { "nixfmt" },
 				rust = { "rustfmt" },
 				cs = { "csharpier" },
+				kt = { "ktfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

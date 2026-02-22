@@ -25,6 +25,7 @@ return {
 			"rust_analyzer",
 			"roslyn_ls",
 			"nixd",
+			"kotlin_language_server",
 		}
 
 		for _, server in ipairs(servers) do
