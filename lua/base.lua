@@ -9,24 +9,21 @@ opt.updatetime = 250
 
 opt.clipboard = "unnamedplus"
 
-
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
-
 
 opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = false
 opt.incsearch = true
 
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>nh", "<cmd>nohlsearch<CR>")
 
-vim.cmd.colorscheme "oxocarbon"
+vim.cmd.colorscheme("oxocarbon")
 vim.opt.background = "dark"
 
-
 require("plugin_loader")
+require("sync_plugins_setup")
