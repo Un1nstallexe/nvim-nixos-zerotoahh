@@ -50,6 +50,9 @@
             trouble-nvim
             nvim-lspconfig
             blink-cmp
+            mini-pick
+            mini-comment
+            mini-pairs
           ];
           deps = with pkgs; [
             wl-clipboard
