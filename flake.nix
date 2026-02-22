@@ -64,7 +64,7 @@
             lua-language-server
             pyright
             rust-analyzer
-            nil
+            nixd
             # Formatters
             prettier
             stylua

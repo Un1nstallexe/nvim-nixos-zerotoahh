@@ -24,7 +24,7 @@ return {
 			"lua_ls",
 			"rust_analyzer",
 			"roslyn_ls",
-			"nil_ls",
+			"nixd",
 		}
 
 		for _, server in ipairs(servers) do
