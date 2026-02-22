@@ -13,27 +13,29 @@ return {
     -- since blink is incredibly fast.
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-    local servers = { "html", "cssls", "ts_ls" }
+    local servers = {
+      "ts_ls",
+      "cssls",
+      "html",
+      "jsonls",
+      "eslint",
+      "pyright",
+      "angularls",
+      "lua_ls",
+      "rust_analyzer",
+      "roslyn_ls"
+    }
 
     for _, server in ipairs(servers) do
-      if server == "omnisharp" then
-        vim.lsp.config(server, {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-          root_markers = { '.git' }
-        })
-      else
-        local opts = {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          root_markers = { '.git', 'angular.json' }
-        }
+      -- Fetch the default config from the plugin
+      local config = vim.lsp.config[server]
 
-        vim.lsp.config(server, opts)
-      end
+      -- Enable the server with that config
+      -- Note: If you have no custom settings, vim.lsp.enable(server)
+      -- will often work automatically if the config exists in the runtime path.
+      vim.lsp.config(server, config)
+      vim.lsp.enable(server)
     end
-
     -- Core LSP Keybinds
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })

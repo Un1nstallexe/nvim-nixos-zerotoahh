@@ -21,6 +21,7 @@
               lz-n
               nvim-treesitter.withAllGrammars
               nvim-web-devicons
+              oxocarbon-nvim
             ];
             myPlugins = lspAndStuff ++ [myLocalConfig];
             myLazyPlugins = with pkgs.vimPlugins; [
@@ -35,9 +36,20 @@
                   # LSPs
                   nodePackages.vscode-langservers-extracted # Provides 'html' and 'cssls'
                   nodePackages.typescript-language-server   # Provides 'ts_ls' (handles TS/JS/React)
-
+                  angular-language-server
+                  roslyn-ls
+                  eslint
+                  eslint_d
+                  lua-language-server
+                  pyright
+                  rust-analyzer
+                  nil
                   # Formatters
                   prettier
+                  stylua
+                  ruff
+                  rustfmt
+                  csharpier
                 ];
 
           customNeovim = pkgs.neovim.override {
@@ -45,7 +57,7 @@
               customRC = ''
                 luafile ${./init.lua}
               '';
-              extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath deps}"'';
+
               packages.myVimPackage = {
                 start = myPlugins;
                 opt = myLazyPlugins;
@@ -53,7 +65,7 @@
               extraPackages = deps;
 
             };
-
+            extraMakeWrapperArgs = ''--prefix PATH : "${pkgs.lib.makeBinPath deps}"'';
           };
         in
         {

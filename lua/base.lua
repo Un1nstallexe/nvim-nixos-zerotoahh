@@ -1,4 +1,3 @@
-
 local opt = vim.opt
 
 opt.number = true
@@ -24,5 +23,10 @@ opt.incsearch = true
 
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<leader>nh", "<cmd>nohlsearch<CR>")
+
+vim.cmd.colorscheme "oxocarbon"
+vim.opt.background = "dark"
+
+
 require("plugin_loader")

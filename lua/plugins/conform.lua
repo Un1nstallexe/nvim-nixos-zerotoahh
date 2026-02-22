@@ -14,6 +14,12 @@ return {
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
+        json = { "prettier" },
+        lua = { "stylua" },
+        python = { "ruff" },
+        nix = { "nil" },
+        rust = { "rustfmt" },
+        cs = { "csharpier" },
       },
       format_on_save = {
         timeout_ms = 500,
