@@ -55,8 +55,6 @@
             mini-pairs
           ];
           deps = with pkgs; [
-            wl-clipboard
-
             # LSPs
             nodePackages.vscode-langservers-extracted # Provides 'html' and 'cssls'
             nodePackages.typescript-language-server # Provides 'ts_ls' (handles TS/JS/React)
