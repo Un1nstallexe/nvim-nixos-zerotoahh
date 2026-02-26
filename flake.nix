@@ -43,6 +43,13 @@
           ];
           otherSyncPlugins = with pkgs.vimPlugins; [
             lualine-nvim
+            #neotest deps
+            neotest
+            neotest-playwright
+            neotest-dotnet
+            plenary-nvim
+            nvim-nio
+
           ];
           myPlugins = lspAndStuff ++ [ myLocalConfig ] ++ otherSyncPlugins;
           myLazyPlugins = with pkgs.vimPlugins; [
