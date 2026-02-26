@@ -43,6 +43,13 @@
           ];
           otherSyncPlugins = with pkgs.vimPlugins; [
             lualine-nvim
+            #neotest deps
+            neotest
+            neotest-playwright
+            neotest-dotnet
+            plenary-nvim
+            nvim-nio
+
           ];
           myPlugins = lspAndStuff ++ [ myLocalConfig ] ++ otherSyncPlugins;
           myLazyPlugins = with pkgs.vimPlugins; [
@@ -53,15 +60,8 @@
             mini-pick
             mini-comment
             mini-pairs
-            neotest
-            neotest-playwright
-            neotest-dotnet
-            plenary-nvim
-            nvim-nio
           ];
           deps = with pkgs; [
-            wl-clipboard
-
             # LSPs
             nodePackages.vscode-langservers-extracted # Provides 'html' and 'cssls'
             nodePackages.typescript-language-server # Provides 'ts_ls' (handles TS/JS/React)
