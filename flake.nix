@@ -53,6 +53,11 @@
             mini-pick
             mini-comment
             mini-pairs
+            neotest
+            neotest-playwright
+            neotest-dotnet
+            plenary-nvim
+            nvim-nio
           ];
           deps = with pkgs; [
             wl-clipboard
