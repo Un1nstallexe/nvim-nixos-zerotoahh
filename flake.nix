@@ -49,7 +49,7 @@
             neotest-dotnet
             plenary-nvim
             nvim-nio
-
+            nvim-dap
           ];
           myPlugins = lspAndStuff ++ [ myLocalConfig ] ++ otherSyncPlugins;
           myLazyPlugins = with pkgs.vimPlugins; [
@@ -82,6 +82,8 @@
             nixfmt
             csharpier
             ktfmt
+            # DAP
+            netcoredbg
           ];
 
           customNeovim = pkgs.neovim.override {
