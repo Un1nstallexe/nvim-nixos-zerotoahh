@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		end
 	end,
 })
-vim.cmd.colorscheme("oxocarbon")
+vim.cmd.colorscheme("retrobox")
 vim.opt.background = "dark"
 
 require("plugin_loader")
