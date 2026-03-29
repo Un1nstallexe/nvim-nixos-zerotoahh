@@ -82,6 +82,7 @@
             nixfmt
             csharpier
             ktfmt
+            emmet-language-server
             # DAP
             netcoredbg
           ];
