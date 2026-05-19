@@ -60,6 +60,7 @@
             mini-pick
             mini-comment
             mini-pairs
+            nvim-lint
           ];
           deps = with pkgs; [
             # LSPs
@@ -85,6 +86,8 @@
             emmet-language-server
             # DAP
             netcoredbg
+            # linters
+            clippy
           ];
 
           customNeovim = pkgs.neovim.override {
