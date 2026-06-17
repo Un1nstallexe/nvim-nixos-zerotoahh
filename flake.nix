@@ -65,8 +65,8 @@
           ];
           deps = with pkgs; [
             # LSPs
-            nodePackages.vscode-langservers-extracted # Provides 'html' and 'cssls'
-            nodePackages.typescript-language-server # Provides 'ts_ls' (handles TS/JS/React)
+            vscode-langservers-extracted # Provides 'html' and 'cssls'
+            typescript-language-server # Provides 'ts_ls' (handles TS/JS/React)
             angular-language-server
             roslyn-ls
             eslint
