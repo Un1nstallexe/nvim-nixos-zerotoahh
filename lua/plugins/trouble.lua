@@ -2,6 +2,13 @@ return {
 	"trouble.nvim",
 	keys = {
 		{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+		{
+			"<leader>vv",
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			desc = "Quick actions (LSP)",
+		},
 	},
 	-- `after` runs exactly once, right after the plugin is added to the runtimepath
 	after = function()

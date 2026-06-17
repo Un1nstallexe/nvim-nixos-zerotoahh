@@ -50,6 +50,7 @@
             plenary-nvim
             nvim-nio
             nvim-dap
+            tv-nvim
           ];
           myPlugins = lspAndStuff ++ [ myLocalConfig ] ++ otherSyncPlugins;
           myLazyPlugins = with pkgs.vimPlugins; [
@@ -88,6 +89,9 @@
             netcoredbg
             # linters
             clippy
+            ripgrep
+            fd
+            bat
           ];
 
           customNeovim = pkgs.neovim.override {
