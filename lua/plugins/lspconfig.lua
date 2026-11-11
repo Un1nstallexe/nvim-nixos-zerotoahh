@@ -27,6 +27,7 @@ return {
 			"nixd",
 			"kotlin_language_server",
 			"emmet_language_server",
+			"dartls",
 		}
 
 		for _, server in ipairs(servers) do

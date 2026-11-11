@@ -76,6 +76,7 @@
             rust-analyzer
             nixd
             kotlin-language-server
+            dart
             # Formatters
             prettier
             stylua
